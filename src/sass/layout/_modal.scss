@@ -1,0 +1,247 @@
+.backdrop {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scaleY(1);
+
+  background-color: rgba(0, 0, 0, 0.3);
+
+  transition: transform 200ms $timing-function-main;
+}
+
+.is-hidden {
+  transform: scaleY(0);
+
+  transition: transform 200ms $timing-function-main;
+}
+
+.background-blur {
+  filter: blur(10px);
+}
+
+.body-modal-open {
+  overflow: hidden;
+}
+
+.modal-for-movie {
+  position: fixed;
+  overflow-y: scroll;
+  max-height: 95%;
+  width: 280px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 48px 20px 32px;
+  background-color: $main-bg-text-color;
+  border-radius: 5px;
+
+  transition: transform;
+  transition-duration: 2000ms;
+  transition-timing-function: $timing-function-main;
+
+  @include for-tablet {
+    width: 618px;
+    padding: 42px 29px;
+  }
+
+  @include for-desktop {
+    width: 882px;
+  }
+}
+
+.modal__vote {
+  display: inline-block;
+  height: 16px;
+  width: 32px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: $accent-color;
+}
+
+.modal__movie-container {
+  margin-bottom: 21px;
+  font-weight: 500;
+  color: $secondary-text-colour;
+
+  @include for-tablet {
+    display: flex;
+  }
+}
+
+.modal__poster {
+  border-radius: 4px;
+  margin-bottom: 30px;
+  object-fit: cover;
+
+  @include for-tablet {
+    border-radius: 8px;
+    margin-bottom: 0;
+    width: 264px;
+    height: 373px;
+    margin-right: 32px;
+  }
+
+  @include for-desktop {
+    width: 396px;
+    height: 478px;
+  }
+}
+
+.modal__title,
+.modal__about,
+.modal__btn {
+  text-transform: uppercase;
+}
+
+.modal__title {
+  margin-bottom: 20px;
+
+  font-size: 20px;
+  line-height: 1.15;
+
+  @include for-desktop {
+    font-size: 30px;
+    line-height: 1.17;
+  }
+}
+
+.modal__stat {
+  display: flex;
+  margin-bottom: 20px;
+
+  &-list {
+    margin-right: 40px;
+  }
+
+  &-list > &-item {
+    color: $light-gray-description-box;
+  }
+
+  &-item {
+    line-height: 1.33;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.modal__about {
+  margin-bottom: 10px;
+  @include for-desktop {
+    font-size: 16px;
+  }
+}
+
+.modal__desc {
+  line-height: 1.67;
+  @include for-desktop {
+    font-size: 14px;
+  }
+}
+
+.modal__btn-wrap {
+  @include for-tablet {
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.modal__btn {
+  vertical-align: bottom;
+  font-size: inherit;
+  font-weight: 500;
+  width: 112px;
+  height: 44px;
+
+  border: 1px solid $secondary-text-colour;
+  border-radius: 5px;
+
+  background-color: $main-bg-text-color;
+
+  @include for-tablet {
+    width: 125px;
+  }
+
+  transition: color, background-color;
+  transition-duration: $duration-main;
+  transition-timing-function: $timing-function-main;
+
+  &:hover {
+    border: 2px solid $accent-color;
+    color: $accent-color;
+    background-color: #ff6b013d;
+  }
+
+  &_accent-style {
+    background-color: $accent-color;
+    color: $main-bg-text-color;
+    border: none;
+  }
+}
+
+.modal__btn:not(:last-child) {
+  margin-right: 12px;
+  @include for-tablet {
+    margin-left: auto;
+    margin-right: 16px;
+  }
+}
+
+.modal__btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.modal__btn-icon {
+  stroke: $secondary-text-colour;
+  transition: stroke, transform;
+  transition-duration: 200ms;
+  transition-timing-function: $timing-function-main;
+
+  &:hover {
+    transform: scale(1.1);
+    stroke: $accent-color;
+  }
+}
+// trailer
+.basicLightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // padding: 200px, 0;
+  // z-index: 1000;
+}
+.modal__btn.modal-trailer__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding-right: 40px;
+  margin-bottom: 10px;
+  width: 240px;
+  @include for-tablet {
+    width: 260px;
+    margin-right: 28px;
+  }
+  @include for-desktop {
+    width: 395px;
+    margin-right: 75px;
+    margin-left: 0;
+  }
+}
+.modal-trailer__btn-item {
+  font-size: 30px;
+  margin-right: 55px;
+}

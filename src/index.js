@@ -1,0 +1,10 @@
+import './sass/main.scss';
+import './js/components/renderMoviesTrending';
+import './js/components/fetchMovieByInput.js';
+import './js/components/fetchMovieForModal';
+import './js/components/pagination';
+import './js/components/header.js';
+import './js/components/team.js';
+import './js/services/darcmodMine';
+import './js/components/btnUp';
+import './js/components/trailer';
